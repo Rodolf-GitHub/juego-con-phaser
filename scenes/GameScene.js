@@ -31,13 +31,33 @@ class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('ayuntamiento', 'assets/images/structures/ayuntamiento.png');
-    this.load.image('canteraPiedra', 'assets/images/structures/canteraPiedra.png');
-    this.load.image('granja', 'assets/images/structures/granja.png');
-    this.load.image('aserradero', 'assets/images/structures/aserradero.png');
-    this.load.image('minaOro', 'assets/images/structures/minaOro.png');
-    this.load.image('torre', 'assets/images/structures/torreArquero.jpg');
-    this.load.image('muralla', 'assets/images/structures/muralla.jpg');
+    const assets = [
+      { key: 'ayuntamiento', path: 'assets/images/structures/ayuntamiento.png' },
+      { key: 'canteraPiedra', path: 'assets/images/structures/canteraPiedra.png' },
+      { key: 'granja', path: 'assets/images/structures/granja.png' },
+      { key: 'aserradero', path: 'assets/images/structures/aserradero.png' },
+      { key: 'minaOro', path: 'assets/images/structures/minaOro.png' },
+      { key: 'torre', path: 'assets/images/structures/torreArquero.jpg' },
+      { key: 'muralla', path: 'assets/images/structures/muralla.jpg' }
+    ];
+
+    let loadedAssets = 0;
+
+    assets.forEach(asset => {
+      this.load.image(asset.key, asset.path);
+    });
+
+    this.load.on('filecomplete', (key) => {
+      loadedAssets++;
+      const progress = loadedAssets / assets.length;
+      console.log(`Progreso de carga: ${progress * 100}%`);
+      this.game.events.emit('progress', progress);
+    });
+
+    this.load.on('complete', () => {
+      console.log('Carga completa');
+      this.game.events.emit('ready');
+    });
   }
 
   create() {
