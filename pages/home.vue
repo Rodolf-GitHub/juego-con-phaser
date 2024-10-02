@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref, defineComponent } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 
 const game = ref(null);
 let estructura;
