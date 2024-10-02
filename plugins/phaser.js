@@ -1,6 +1,5 @@
-export default ({ app }, inject) => {
-    if (process.client) {
-      const Phaser = require('phaser');
-      inject('Phaser', Phaser);
-    }
-  };
+import Phaser from 'phaser'
+
+export default defineNuxtPlugin(nuxtApp => {
+    nuxtApp.provide('phaser', Phaser)
+})
