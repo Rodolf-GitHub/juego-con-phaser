@@ -1,0 +1,31 @@
+-- Soldado de infantería
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Soldado de Infantería', 100, 10, 50, 0, 30, 1, NOW(), NOW());
+
+-- Arquero
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Arquero', 80, 15, 60, 30, 20, 1, NOW(), NOW());
+
+-- Caballero
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Caballero', 150, 20, 100, 0, 50, 2, NOW(), NOW());
+
+-- Catapulta
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Catapulta', 60, 30, 150, 100, 30, 3, NOW(), NOW());
+
+-- Espía
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Espía', 50, 5, 80, 0, 20, 1, NOW(), NOW());
+
+-- Ballestero
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Ballestero', 90, 18, 70, 40, 25, 1, NOW(), NOW());
+
+-- Lancero
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Lancero', 110, 12, 55, 20, 35, 1, NOW(), NOW());
+
+-- Caballería pesada
+INSERT INTO XtipoTropas (nombre, puntos_vida, ataque, coste_oro, coste_madera, coste_comida, coste_poblacion, createdAt, updatedAt)
+VALUES ('Caballería Pesada', 200, 25, 150, 50, 70, 3, NOW(), NOW());
